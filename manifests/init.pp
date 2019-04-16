@@ -750,7 +750,7 @@ class spamassassin(
 
 # This part removes the forking for the service startup that wouldn't allow the service to startup correctly M.Perlov
 
-  file_line { 'spamassassin.service_update_1' :
+  file_line { 'spamassassin.service_remove_forking' :
     path    => '/usr/lib/systemd/system/spamassassin.service',
     line    => '#Removing Type=forking to allow sturtup',
     match   => '^Type=',
