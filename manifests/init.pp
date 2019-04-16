@@ -748,7 +748,7 @@ class spamassassin(
     }
   }
 
-# Added the file_line for testing
+# This part removes the forking for the service startup that wouldn't allow the service to startup correctly M.Perlov
 
   file_line { 'spamassassin.service_update_1' :
     path    => '/usr/lib/systemd/system/spamassassin.service',
