@@ -748,6 +748,14 @@ class spamassassin(
     }
   }
 
+# Added the file_line for testing
+
+  file_line { 'spamassassin.service_update_1' :
+    path    => '/usr/lib/systemd/system/spamassassin.service',
+    line    => '#Removing Type=forking to allow sturtup',
+    match   => '^Type=',
+    }
+
   service { 'spamassassin':
       ensure  => $service_enabled,
       enable  => $service_enabled,
